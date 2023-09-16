@@ -63,14 +63,25 @@ class MahasiswaController extends Controller
     {
         $result = DB::update(
             'UPDATE mahasiswas SET created_at = now(), updated_at = now()
-            WHERE nim = ?', ['19003036']
+            WHERE nim = ?',
+            ['19003036']
         );
         dump($result);
     }
 
-    public function delete(){
+    public function delete()
+    {
         $result = DB::delete(
-            'DELETE FROM mahasiswas WHERE nama = ?', ['James Situmorang']
+            'DELETE FROM mahasiswas WHERE nama = ?',
+            ['James Situmorang']
+        );
+        dump($result);
+    }
+
+    public function select()
+    {
+        $result = DB::select(
+            'SELECT * FROM mahasiswas'
         );
         dump($result);
     }
