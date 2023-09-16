@@ -111,8 +111,18 @@ class MahasiswaController extends Controller
     public function selectWhere()
     {
         $result = DB::select(
-            'SELECT * FROM mahasiswas WHERE ipk > ? ORDER BY nama ASC', [3]
+            'SELECT * FROM mahasiswas WHERE ipk > ? ORDER BY nama ASC',
+            [3]
         );
         return view('tampil-mahasiswa', ['mahasiswas' => $result]);
+    }
+
+    public function statement()
+    {
+        $result = DB::statement(
+            'TRUNCATE mahasiswas'
+        );
+
+        echo "Tabel mahasiswas berhasil dikosongkan!";
     }
 }
