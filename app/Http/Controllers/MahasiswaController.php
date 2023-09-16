@@ -29,4 +29,15 @@ class MahasiswaController extends Controller
         );
         dump($result);
     }
+
+    public function insertPrepared()
+    {
+        $result = DB::insert(
+            'INSERT INTO mahasiswas
+            (nim, nama, tanggal_lahir, ipk, created_at, updated_at)
+            VALUES (?,?,?,?,?,?)',
+            ['18012012', 'James Situmorang', '1999-04-02', 2.7, now(), now()]
+        );
+        dump($result);
+    }
 }
