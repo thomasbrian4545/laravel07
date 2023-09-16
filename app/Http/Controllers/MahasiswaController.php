@@ -99,4 +99,12 @@ class MahasiswaController extends Controller
         echo $result[0]->created_at . "<br>";
         echo $result[0]->updated_at . "<br>";
     }
+
+    public function selectView()
+    {
+        $result = DB::select(
+            'SELECT * FROM mahasiswas'
+        );
+        return view('tampil-mahasiswa', ['mahasiswas' => $result]);
+    }
 }
