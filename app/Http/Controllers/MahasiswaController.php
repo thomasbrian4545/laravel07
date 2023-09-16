@@ -107,4 +107,12 @@ class MahasiswaController extends Controller
         );
         return view('tampil-mahasiswa', ['mahasiswas' => $result]);
     }
+
+    public function selectWhere()
+    {
+        $result = DB::select(
+            'SELECT * FROM mahasiswas WHERE ipk > ? ORDER BY nama ASC', [3]
+        );
+        return view('tampil-mahasiswa', ['mahasiswas' => $result]);
+    }
 }
